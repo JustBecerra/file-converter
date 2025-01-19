@@ -16,6 +16,21 @@
   color: #3bb5e9
 }
 
+.selectcontainer {
+  display: flex;
+  gap: 3em;
+}
+
+.fileinput {
+  background-color: #3bb5e9;
+  width: 50%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -32,5 +47,7 @@
   justify-content: center;
   align-items: center;
   height: 60%;
+  width: 100%;
+  gap: 3em;
 }
 

@@ -7,10 +7,19 @@ function App() {
 				<p className="apptitle">File Converter</p>
 			</div>
 			<div className="card">
-				<input type="file" />
-				<div>
-					<select />
-					<select />
+				<div className="fileinput">
+					<input type="file" />
+				</div>
+
+				<div className="selectcontainer">
+					<select name="original file">
+						<option>.epub</option>
+						<option>.mobi</option>
+					</select>
+					<select name="new file">
+						<option>.mobi</option>
+						<option>.epub</option>
+					</select>
 				</div>
 			</div>
 			<p className="read-the-docs">
