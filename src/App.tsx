@@ -9,24 +9,30 @@ function App() {
 				</p>
 			</div>
 			<div className="p-[2em] flex flex-col justify-center items-center h-[60%] w-full gap-[3em]">
-				<div className="flex gap-[3em]">
-					<select name="original file">
+				<div className="flex justify-around items-center w-[80%]">
+					<select
+						className="bg-black p-2 rounded w-[100px] h-[60px]"
+						name="original file"
+					>
 						<option>.epub</option>
 						<option>.mobi</option>
 					</select>
-					<select name="new file">
+					<p className="text-black text-xl">TO</p>
+					<select
+						className="bg-black p-2 rounded w-[100px] h-[60px]"
+						name="new file"
+					>
 						<option>.mobi</option>
 						<option>.epub</option>
 					</select>
 				</div>
 
-				<div className="bg-[#3bb5e9] w-1/2 h-[70px] flex justify-center items-center rounded-[4px]">
-					<label htmlFor="dropFile" className="text-red-500">
-						Drag your file here or click in this area to select a
-						file
+				<div className="bg-[#3bb5e9] cursor-pointer w-[80%] h-[70px] flex justify-center items-center rounded">
+					<label htmlFor="dropFile" className="text-white p-4">
+						Drag your file or click here to upload a file
 					</label>
 
-					<input id="dropFile" type="file" />
+					<input id="dropFile" type="file" className="hidden" />
 				</div>
 			</div>
 		</div>
