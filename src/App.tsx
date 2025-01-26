@@ -11,15 +11,15 @@ function App() {
 			<div className="p-[2em] flex flex-col justify-center items-center h-[60%] w-full gap-[3em]">
 				<div className="flex justify-around items-center w-[80%]">
 					<select
-						className="bg-black p-2 rounded w-[100px] h-[60px]"
+						className="bg-white text-black p-2 rounded w-[100px] h-[60px]"
 						name="original file"
 					>
 						<option>.epub</option>
 						<option>.mobi</option>
 					</select>
-					<p className="text-black text-xl">TO</p>
+					<p className="text-white text-xl">TO</p>
 					<select
-						className="bg-black p-2 rounded w-[100px] h-[60px]"
+						className="bg-white text-black p-2 rounded w-[100px] h-[60px]"
 						name="new file"
 					>
 						<option>.mobi</option>
@@ -28,7 +28,10 @@ function App() {
 				</div>
 
 				<div className="bg-[#3bb5e9] cursor-pointer w-[80%] h-[70px] flex justify-center items-center rounded">
-					<label htmlFor="dropFile" className="text-white p-4">
+					<label
+						htmlFor="dropFile"
+						className="text-white cursor-pointer p-4"
+					>
 						Drag your file or click here to upload a file
 					</label>
 
