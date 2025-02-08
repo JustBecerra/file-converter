@@ -1,6 +1,17 @@
+import { useState } from "react"
 import "./App.css"
 
 function App() {
+	const [droppedFile, setDroppedFile] = useState<File | null>(null)
+
+	const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+		e.preventDefault()
+		e.stopPropagation()
+	}
+
+	const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		if (e.target.files) setDroppedFile(e.target.files[0])
+	}
 	return (
 		<div className="flex flex-col justify-center items-center h-[70vh] w-[40vw]">
 			<div>
@@ -27,15 +38,27 @@ function App() {
 					</select>
 				</div>
 
-				<div className="bg-[#3bb5e9] cursor-pointer w-[80%] h-[70px] flex justify-center items-center rounded">
+				<div
+					onDrop={handleDrop}
+					className="bg-[#3bb5e9] cursor-pointer w-[80%] h-[70px] flex justify-center items-center rounded"
+				>
 					<label
 						htmlFor="dropFile"
 						className="text-white cursor-pointer p-4"
 					>
-						Drag your file or click here to upload a file
-					</label>
+						{droppedFile ? (
+							<p>{droppedFile.name}</p>
+						) : (
+							<p>Drag your file or click here to upload a file</p>
+						)}
 
-					<input id="dropFile" type="file" className="hidden" />
+						<input
+							id="dropFile"
+							onChange={handleFileChange}
+							type="file"
+							className="hidden"
+						/>
+					</label>
 				</div>
 			</div>
 		</div>
