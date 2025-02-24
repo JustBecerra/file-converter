@@ -28,7 +28,7 @@ function App() {
 					<div className="flex flex-col gap-6 items-center w-[80%]">
 						<div className="flex w-[100%] h-[60px]">
 							<div className="border-white border-1 border-solid w-[100%] h-[60px] flex justify-around items-center rounded">
-								<p className="text-white w-[70%] text-xl">
+								<p className="text-white w-[70%] text-sm">
 									{droppedFile.name}
 								</p>
 								<p className="text-white w-[30%] text-xl border-l-white border-l-2 border-solid">
