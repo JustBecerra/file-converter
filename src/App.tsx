@@ -19,8 +19,7 @@ function App() {
 					File Converter
 				</p>
 				<p className="text-[1em]  text-white">
-					Drag and drop or click your file and select the format you
-					want to convert it to.
+					Select the format you want and convert your file.
 				</p>
 			</div>
 			<div className="p-[2em] flex flex-col justify-center items-center h-[60%] w-full gap-[3em]">
