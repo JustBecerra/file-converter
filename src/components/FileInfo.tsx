@@ -48,26 +48,26 @@ export const FileInfo: React.FC<FileInfoProps> = ({ file, onRemove }) => {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg sm:rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 sm:p-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <div className="text-3xl">{getFileIcon(file.name)}</div>
+          <div className="flex items-center space-x-3 sm:space-x-4 min-w-0 flex-1">
+            <div className="text-2xl sm:text-3xl flex-shrink-0">{getFileIcon(file.name)}</div>
             <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white truncate">
+              <h3 className="text-sm sm:text-lg font-semibold text-gray-900 dark:text-white truncate">
                 {file.name}
               </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                 {formatFileSize(file.size)} • {file.type || 'Unknown type'}
               </p>
             </div>
           </div>
           <button
             onClick={onRemove}
-            className="ml-4 p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors duration-200"
+            className="ml-3 sm:ml-4 p-1.5 sm:p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors duration-200 flex-shrink-0"
             title="Remove file"
           >
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4 sm:w-5 sm:h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

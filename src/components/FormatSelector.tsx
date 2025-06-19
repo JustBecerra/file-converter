@@ -91,13 +91,13 @@ export const FormatSelector: React.FC<FormatSelectorProps> = ({
       <div className="relative">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 text-left shadow-sm hover:border-blue-500 dark:hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+          className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-left shadow-sm hover:border-blue-500 dark:hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
         >
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+            <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
                 <svg
-                  className="w-4 h-4 text-blue-500"
+                  className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -110,17 +110,17 @@ export const FormatSelector: React.FC<FormatSelectorProps> = ({
                   />
                 </svg>
               </div>
-              <div>
-                <p className="text-sm font-medium text-gray-900 dark:text-white">
+              <div className="flex-1 min-w-0">
+                <p className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">
                   Convert to
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 truncate">
                   {selectedFormatInfo ? `${selectedFormatInfo.label} (${selectedFormatInfo.description})` : 'Select format...'}
                 </p>
               </div>
             </div>
             <svg
-              className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''
+              className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-400 transition-transform duration-200 flex-shrink-0 ${isOpen ? 'rotate-180' : ''
                 }`}
               fill="none"
               stroke="currentColor"
@@ -137,11 +137,11 @@ export const FormatSelector: React.FC<FormatSelectorProps> = ({
         </button>
 
         {isOpen && (
-          <div className="absolute z-10 w-full mt-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg max-h-96 overflow-y-auto">
+          <div className="absolute z-10 w-full mt-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl shadow-lg max-h-80 sm:max-h-96 overflow-y-auto">
             {formatCategories.map((category, categoryIndex) => (
               <div key={categoryIndex}>
-                <div className="px-4 py-2 bg-gray-50 dark:bg-gray-700">
-                  <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <div className="px-3 sm:px-4 py-2 bg-gray-50 dark:bg-gray-700">
+                  <h3 className="text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300">
                     {category.name}
                   </h3>
                 </div>
@@ -152,21 +152,21 @@ export const FormatSelector: React.FC<FormatSelectorProps> = ({
                       onFormatSelect(format.value);
                       setIsOpen(false);
                     }}
-                    className={`w-full px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150 ${selectedFormat === format.value
+                    className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150 ${selectedFormat === format.value
                       ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
                       : 'text-gray-900 dark:text-white'
                       }`}
                   >
                     <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-medium">{format.label}</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm sm:text-base font-medium truncate">{format.label}</p>
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 truncate">
                           {format.description}
                         </p>
                       </div>
                       {selectedFormat === format.value && (
                         <svg
-                          className="w-5 h-5 text-blue-500"
+                          className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"

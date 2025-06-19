@@ -53,7 +53,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <div
-        className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300 cursor-pointer ${isDragOver
+        className={`relative border-2 border-dashed rounded-lg sm:rounded-xl p-6 sm:p-8 text-center transition-all duration-300 cursor-pointer ${isDragOver
           ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
           : 'border-gray-300 dark:border-gray-600 hover:border-blue-400 dark:hover:border-blue-500'
           } ${isUploading ? 'opacity-50 pointer-events-none' : ''}`}
@@ -71,15 +71,15 @@ export const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
         />
 
         {isUploading ? (
-          <div className="flex flex-col items-center space-y-4">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
-            <p className="text-gray-600 dark:text-gray-400">Uploading file...</p>
+          <div className="flex flex-col items-center space-y-3 sm:space-y-4">
+            <div className="animate-spin rounded-full h-10 w-10 sm:h-12 sm:w-12 border-b-2 border-blue-500"></div>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">Uploading file...</p>
           </div>
         ) : (
-          <div className="flex flex-col items-center space-y-4">
-            <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+          <div className="flex flex-col items-center space-y-3 sm:space-y-4">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
               <svg
-                className="w-8 h-8 text-blue-500"
+                className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -93,11 +93,11 @@ export const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
               </svg>
             </div>
             <div>
-              <p className="text-lg font-medium text-gray-900 dark:text-white">
+              <p className="text-base sm:text-lg font-medium text-gray-900 dark:text-white">
                 Drop your file here
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                or click to browse files
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">
+                or tap to browse files
               </p>
             </div>
             <p className="text-xs text-gray-400 dark:text-gray-500">
