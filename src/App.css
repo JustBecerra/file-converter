@@ -1,15 +1,7 @@
 @import "tailwindcss";
 
-@theme {  --cool-black-100: rgba(41, 41, 41, 0.95);}
-
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: rgba(41, 41, 41, 0.95);
-  border-color: white;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 16px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
